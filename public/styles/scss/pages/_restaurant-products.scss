@@ -1,0 +1,212 @@
+.restaurant-products {
+    position: relative;
+
+    .category-banner {
+        width: 100%;
+        height: clamp(180px, 20vw, 300px);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    h2 {
+        margin: 20px auto;
+
+        &::after,
+        &::before {
+            background-color: black;
+        }
+    }
+
+    .cat-content {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .categories-container {
+        background-color: #D9D9D9;
+        margin-top: 20px;
+        z-index: 50;
+        position: sticky;
+        top: -95px;
+
+        .categories {
+            display: flex;
+            flex-direction: row;
+            overflow: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            gap: 15px;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+
+            #active {
+                background-color: $gold;
+                order: 1;
+            }
+
+            .category {
+                order: 2;
+                min-width: 200px;
+                flex-shrink: 0;
+                scroll-snap-align: start;
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                justify-content: center;
+                align-items: center;
+                border-radius: 550px;
+                padding: 10px 20px;
+                background-color: white;
+
+                a {
+                    color: black;
+                    text-decoration: none;
+                }
+
+                figure {
+                    width: 30px;
+                    height: 30px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        .sub-categories {
+            display: flex;
+            overflow: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            gap: 15px;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            justify-content: center;
+
+            .sub-category {
+                min-width: 100px;
+                max-width: 250px;
+                flex-shrink: 0;
+                scroll-snap-align: start;
+                border-radius: 550px;
+                padding: 10px 20px;
+                background-color: white;
+                font-size: 12px;
+                text-align: center;
+
+                h4 {
+                    font-weight: 300;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    a {
+                        color: black;
+                        text-decoration: none;
+
+                    }
+                }
+            }
+
+            #active {
+                background-color: black !important;
+
+                a {
+                    color: white !important;
+                }
+            }
+
+        }
+    }
+
+    .products {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+
+        h3 {
+            margin: 20px 0 0 40px;
+            z-index: -1;
+
+            @media screen and (min-width: 700px) {
+                margin: 20px auto;
+            }
+
+            &::before,
+            &::after {
+                // background-color: black;
+            }
+        }
+
+
+        .products-container {
+            display: flex;
+            align-content: center;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+
+
+
+        }
+    }
+}
+
+
+
+
+
+.page-cats .product {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px dotted #D9D9D9;
+    width: clamp(300px, 50vw, 600px);
+    margin: auto;
+}
+
+.page-cats .product-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  h5 {
+    font-size: 16px;
+}
+}
+
+.page-cats .product-content {
+    font-size: 14px;
+    line-height: 22px;
+    color: #484848;
+}
+
+.page-cats .product-infos p {
+    color: #484848;
+     font-size: 14px;
+}
+
+.page-cats .product-image {
+    width: 100px;
+    height: 100px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+  }
+}

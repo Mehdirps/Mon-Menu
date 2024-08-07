@@ -1,0 +1,51 @@
+.restaurant-footer {
+    background-color: $black;
+    margin-top: auto;
+    .footer-container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+
+        .restaurant-footer-infos {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            color: white;
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        .restaurant-footer-social-links {
+            width: max-content;
+            margin: 20px auto 0;
+            display: flex;
+            gap: 22px;
+
+            svg {
+                color: $gold;
+            }
+        }
+    }
+
+    .copyright {
+        background-color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+
+        a {
+            color: $gold;
+
+            &:visited {
+                color: $gold;
+            }
+        }
+    }
+}

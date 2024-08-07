@@ -1,0 +1,509 @@
+.restaurant {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .restaurant-header {
+
+        .restaurant-images {
+            width: 100%;
+            position: relative;
+
+            .restaurant-banner {
+                width: 100%;
+                height: 200px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 0 0 20px 20px;
+                }
+            }
+
+            .restaurant-logo {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                border: 5px solid white;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 100%;
+                left: 50%;
+                background-color: black;
+                overflow: hidden;
+
+                img {
+                    object-fit: cover;
+                    object-position: center;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+        }
+
+        .restaurant-infos {
+            display: grid;
+            grid-template-columns: 1fr 150px 1fr;
+            font-size: 12px;
+            padding-top: 10px;
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            justify-items: center;
+
+            @media screen and (min-width: 899px) {
+                font-size: 16px;
+            }
+
+            .location {
+                grid-column: 3/4;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            .phone,
+            .location {
+                text-align: center;
+                justify-self: center;
+            }
+        }
+
+        .restaurant-note-container {
+            .alert-message {
+                margin: 10px;
+                font-size: 14px;
+                color: $gold;
+                text-align: center;
+            }
+
+            .restaurant-note {
+                min-width: 150px;
+                margin: 50px auto 20px;
+                display: flex;
+                justify-content: center;
+                gap: 3px;
+            }
+        }
+    }
+
+    .restaurant-categories {
+        display: flex;
+        overflow: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        max-width: 800px;
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 20px;
+
+        .category {
+            min-width: 200px;
+            max-width: 300px;
+            min-height: 55px;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            justify-items: center;
+            align-items: center;
+            padding: 10px;
+            border: 1px #B1ADAD solid;
+            border-radius: 150px;
+            cursor: pointer;
+            font-size: 12px;
+            gap: 5px;
+
+            a,
+            h4 {
+                color: black;
+                text-decoration: none;
+            }
+
+            h4 {
+                font-weight: 400;
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .restaurant-content {
+
+
+        .restaurant-products {
+            width: 100%;
+            margin: auto;
+            background-color: #F1F1F1;
+            padding: 20px;
+
+            .product-list {
+                display: flex;
+                gap: 15px;
+                padding: 20px;
+                overflow: auto;
+                overflow-y: hidden;
+                scroll-snap-type: x mandatory;
+                padding-left: 10px;
+                margin: auto;
+                max-width: 1000px;
+
+                @media screen and (min-width:899px) {
+                    justify-content: center;
+                }
+
+                .product {
+                    border-radius: 10px;
+                    text-align: center;
+                    background-color: white;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    flex-shrink: 0;
+                    scroll-snap-align: start;
+                    h4 {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: .8rem;
+                        height: 30px;
+                        margin-bottom: 5px;
+                    }
+
+                    figure {
+                        width: 150px;
+                        height: 90px;
+
+                        img {
+                            border-radius: 10px 10px 0 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    a {
+                        cursor: pointer;
+                        margin-bottom: 10px;
+                        text-decoration: none;
+                    }
+
+                    a,
+                    p {
+                        color: #484848;
+                        font-size: clamp(12px, 2vw, 16px);
+                        font-weight: 700;
+                    }
+                }
+
+            }
+        }
+
+        .restaurant-hours {
+            margin-top: 20px;
+            background-image: url('../../images/background-hours.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            padding: 30px 0;
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-color: #000000;
+                opacity: .75;
+                z-index: 1;
+            }
+
+            h2 {
+                z-index: 2;
+                color: #FFF;
+                text-align: center;
+                font-family: Inter;
+                font-size: 27px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+                letter-spacing: 2.7px;
+                text-transform: uppercase;
+                margin-bottom: 5px;
+
+                &::after,
+                &::before {
+                    background-color: white;
+                }
+            }
+
+            .hours-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                position: relative;
+                z-index: 2;
+                color: white;
+                font-size: clamp(11px, 2vw, 16px);
+                // text-transform: uppercase;
+
+                .hours {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .hour {
+                        max-width: 800px;
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 20px;
+
+                        p {
+                            &:nth-of-type(1) {
+                                text-transform: uppercase;
+                            }
+
+                            em {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .restaurant-opinions {
+            width: 100%;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 20px auto;
+
+            .button {
+                width: 200px;
+                height: 50px;
+                margin: auto;
+                padding: 10px 20px 10px 20px;
+                border-radius: 200px;
+                background-color: $gold;
+                display: flex;
+                gap: 5px;
+                justify-content: center;
+                align-items: center;
+                font-size: 14px;
+                position: relative;
+                cursor: pointer;
+
+                p {
+                    font-weight: 700;
+                }
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                &::after,
+                &::before {
+                    content: '';
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    top: 50%;
+                    width: 150px;
+                    height: 2px;
+                    background-color: $gold;
+                }
+
+                &::after {
+                    left: 300px;
+                }
+
+                &::before {
+                    right: 150px;
+                }
+            }
+
+            .opinion-form-container {
+                position: fixed;
+                inset: 0;
+                background-color: rgba(0, 0, 0, 0.266);
+                z-index: 100;
+                display: none;
+                justify-content: center;
+                align-items: center;
+
+                .opinion-form {
+                    width: 90%;
+                    max-width: 400px;
+                    background-color: white;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    position: relative;
+
+                    .close-form {
+                        position: absolute;
+                        top: 5px;
+                        right: 5px;
+                        width: 30px;
+                        height: 30px;
+                        color: white;
+                        cursor: pointer;
+                    }
+
+                    figure {
+                        width: 100%;
+                        height: 150px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: top;
+                        }
+                    }
+
+                    h3 {
+                        font-size: 14px;
+                        margin: 20px auto;
+                    }
+
+                    form {
+                        padding: 20px;
+                        text-align: center;
+                        font-size: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .form-error {
+                            color: red;
+                        }
+
+                        input {
+                            padding: 10px 20px;
+                            border: 2px solid $gold;
+                            border-radius: 500px;
+                            margin: 10px 0 0 0;
+                            width: 100%;
+                        }
+
+                        div {
+
+                            &:nth-of-type(1),
+                            &:nth-of-type(2) {
+                                display: flex;
+                                flex-direction: column;
+                                margin: auto;
+                            }
+
+                            &:nth-of-type(2) {
+                                width: max-content;
+                            }
+                        }
+
+                        input[type="checkbox"].demo5 {
+                            display: none;
+                        }
+
+                        input[type="checkbox"].demo5+label {
+                            box-sizing: border-box;
+                            display: inline-block;
+                            width: 3rem;
+                            height: 1.5rem;
+                            border-radius: 1.5rem;
+                            padding: 2px;
+                            background-color: #cccccc;
+                            transition: all 0.5s;
+                        }
+
+                        input[type="checkbox"].demo5+label::before {
+                            box-sizing: border-box;
+                            display: block;
+                            content: "";
+                            height: calc(1.5rem - 4px);
+                            width: calc(1.5rem - 4px);
+                            border-radius: 50%;
+                            background-color: #fff;
+                            transition: all 0.5s;
+                        }
+
+                        input[type="checkbox"].demo5:checked+label {
+                            background-color: $gold;
+                        }
+
+                        input[type="checkbox"].demo5:checked+label::before {
+                            margin-left: 1.5rem;
+                        }
+
+                        button {
+                            width: 100%;
+                            margin: auto;
+                            padding: 10px;
+                            border-radius: 500px;
+                            background-color: $gold;
+                            border: unset;
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .map-container {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.266);
+        z-index: 10;
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        .map {
+            width: 80%;
+            height: 50%;
+            max-width: 800px;
+            max-height: 500px;
+            position: relative;
+            border: 30px solid white;
+            border-radius: 20px;
+
+            .close {
+                position: absolute;
+                top: -25px;
+                right: -25px;
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+                color: black;
+            }
+
+            iframe {
+
+                width: 100%;
+                height: 100%;
+            }
+
+            .address {
+                font-size: 12px;
+                background-color: white;
+                border-radius: 20px;
+                padding: 10px;
+                text-align: center;
+            }
+        }
+    }
+}

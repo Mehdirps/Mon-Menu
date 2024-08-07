@@ -1,0 +1,260 @@
+.modal .form-control {
+  color: black;
+
+}
+
+.modal textarea.form-control {
+  min-height: 100px;
+  border: 1px solid black;
+  border-radius: 5px
+}
+
+.modal input.form-control {
+  opacity: 1;
+  height: max-content;
+}
+
+
+.form-group input[type=file]{
+ opacity: 1;
+ position: static;
+}
+
+.qr_code{
+  display: block;
+  max-width: 250px;
+}
+.qr_code svg{
+   background-color: #ffffff;
+    border: 2px solid #ebebeb;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.qr_code span{
+  display: block;
+}
+
+
+.ui-timepicker-container.ui-timepicker-standard {
+    background: #27293d;
+}
+
+
+
+  li.share_on_fb, li.share_on_tw {
+    color: #fff
+  }
+
+  .sharing-fb a {
+    color: #1877F2;
+  }
+
+ .sharing-tw a {
+    color: #1DA1F2;
+  }
+  .share_on_lkd a  {
+    background: #0a66c2;
+  }
+  span.sharing.sharing-lkd{
+    color: #0a66c2;
+  }
+  span.sharing.sharing-lkd a{
+    color: #0a66c2;
+  }
+    span.sharing.sharing-wa{
+      margin-right: 10px;
+    }
+  span.sharing.sharing-wa svg {
+    width: 17.5px;
+    color: #42c453;
+    fill: #42c453;
+    position: relative;
+    top: -2px;
+  }
+
+  li.share_on_wa {
+    background: #42c453;
+    color: #fff;
+  }
+  li.share_on_lkd {
+    background: #0a66c2;
+    color: #fff;
+  }
+
+
+ul#items {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+ul#items li{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(139 139 139 / 20%);
+  padding: 10px 0;
+}
+
+ul#items li:nth-child(odd) {
+    background: #f8f8f8;
+}
+
+.item_drag{
+  width: 20px;
+}
+.item_order{
+  width: 25px;
+}
+.item_name{
+  width:80px;
+}
+.item_img{
+   width:30px;
+}
+.item_price{
+   width: 30px;
+}
+.item_cat{
+  display: none;
+}
+.item_fav{
+  width:25px
+}
+.item_pencil{
+  width:10px
+}
+
+li.prems{
+  border-bottom: 1px solid #fff;
+  margin-bottom: 15px;
+  padding-bottom: 4px
+}
+.item_del{
+  width:10px
+}
+
+
+.apercu{
+  padding: 25px;
+}
+.preview_phone_ext
+{
+  height: 350px;
+  border: 10px solid #000;
+  border-radius: 20px;
+  width: 230px;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+}
+.preview_phone_int{
+  background-color: #fff;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.preview_phone_banner{
+  height: 100px;
+  background-color: #eaeaea;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 15px;
+}
+.preview_phone_title{
+  width: 150px;
+  height: 5px;
+  background-color: #000;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.preview_phone_txt{
+  width: 120px;
+  height: 5px;
+  background-color: #989898;
+  margin-left: 10px;
+}
+.preview_phone_bts{
+  width: 185px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.preview_phone_btn{
+  height: 25px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  background-color: #fff;
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.preview_phone_btn span{
+  margin-left: 10px;
+  height: 5px;
+  width: 75px;
+  background-color: #000;
+}
+
+.item_name.item_prod a {
+    color: #000;
+}
+
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop-cyril
+@media(min-width:1000px){
+    ul.new_resto_list_cats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+        width:100%
+}
+
+    .restaurant_infos{
+        margin:auto;
+        left:0;
+        right:0;
+        max-width:980px;
+        border-radius: 16px 16px 0 0;
+    }
+
+.new_resto_list_cats li {
+    width: 24%;
+    margin: 0.5%;
+}
+    .new_resto_banner{
+        height:450px
+    }
+
+.new_resto_container{
+    max-width:980px;
+    margin:auto;
+      width:100%
+}
+    .slide_prods.arrive,
+    .slide_cats.arrive{
+        margin:auto;
+        left:0;
+        right:0;
+        max-width:980px;
+        border-radius: 16px 16px 0 0;
+        height:auto;
+        min-height:0;
+        width:100%;
+        overflow-x:hidden
+    }
+
+
+
+}

@@ -1,0 +1,844 @@
+@import './variables';
+@import './pages/restaurant-home';
+@import './pages/restaurant-products';
+@import './components/restaurant-footer.scss';
+@import './components/restaurant-name.scss';
+
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.title-point {
+    position: relative;
+    width: max-content;
+    margin: auto;
+
+    &::after,
+    &::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: $gold;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+    }
+
+    &::after {
+        right: -20px;
+    }
+
+    &::before {
+        left: -20px;
+    }
+}
+
+.sub-title {
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 600;
+    color: #1E1E1E;
+
+    span {
+        text-transform: uppercase;
+    }
+
+    &::after,
+    &::before {
+        background-color: black;
+    }
+}
+
+.restaurant-desc {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    color: #484848;
+    font-size: clamp(12px, 2vw, 18px);
+    line-height: 22px;
+    // border-bottom: 2px dotted #e3e3e3;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        right: 0;
+        width: 300px;
+        height: 30px;
+        // background-color: #fff;
+        background-image: url(../../img/separator.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: auto;
+        opacity: 0.2;
+    }
+
+    svg {
+        // width: 50px;
+        // float: left;
+        margin-left: auto;
+        margin-right: 10px;
+        opacity: 0.4;
+    }
+
+    display: flex;
+    text-align: center;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+    border-radius: 5000px;
+    height: 7px;
+    width: 10px;
+    opacity: 0;
+    display: none;
+}
+
+::-webkit-scrollbar {
+    height: 7px;
+    width: 10px;
+    background-color: #F5F5F5;
+    opacity: 0;
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5000px;
+    height: 7px;
+    width: 10px;
+    background-color: $gold;
+    opacity: 0;
+    display: none;
+}
+
+
+
+.wrapBtnSave{
+  text-align: center;
+  padding: 20px 0;
+}
+
+.btnSave {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: auto;
+}
+
+.btnSave:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+// Categorie home resto
+
+
+.resto_cats{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    width: 100%;
+    overflow: auto;
+    .resto_cat{
+        position: relative;
+        overflow: hidden;
+        margin: 10px;
+
+        min-width: 100px;
+        min-height: 100px;
+        margin-bottom: 30px;
+
+        .full-link{
+            position: absolute;
+            inset:0;
+            // background-color: red;
+        }
+
+        .resto_cat_title{
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 11px;
+            margin-top: 10px;
+        }
+        .wrap_cat{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction:column
+        }
+        .resto_cat_img{
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
+
+.resto_cats_title{
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.resto_banner{
+    height: 250px;
+    position: relative;
+    background-size: cover;
+    // background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 45px;
+        width: 100%;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.7;
+        pointer-events:none
+    }
+}
+
+.restaurant-header-social-links{
+    padding: 6px;
+}
+
+.restaurant-header-social-links a{
+    text-decoration: none;
+    color: $gold;
+}
+
+.restaurant-header-social-links svg{
+    max-width: 25px;
+    max-height: 25px;
+    margin: 2px 1%;
+}
+
+.restaurant_mobile{
+    display: flex;
+    align-items: center;
+    // padding: 5px 10px;
+    // background-color: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 100px;
+    font-size: 10px;
+    margin: auto;
+    position: relative;
+    color: #1E1E1E;
+    overflow: hidden;
+    height: 32px;
+    width: 110px;
+}
+.restaurant_mobile_icon{
+    // position: absolute;
+    width: 30px;
+    height: 15px;
+    // border-radius: 100%;
+    margin-right: 10px;
+    padding-left: 5px;
+    background-color: #fff;
+    border-right: 1px solid #e3e3e3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    svg {width: 10px;height: 10px;fill:#1E1E1E}
+}
+
+.restaurant .restaurant-header .restaurant-infos {
+
+    display: flex;
+    // align-items: center;
+    width: 95%;
+
+}
+
+.restaurant .restaurant-header .restaurant-images .restaurant-logo{
+    width: 130px;
+    height: 130px;
+}
+
+
+.restaurant .restaurant-header .restaurant-note-container .restaurant-note{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.restaurant .restaurant-content .restaurant-products{
+    padding: 0;
+    padding-top: 30px;
+    background-color: #fcfcfc;
+    padding-bottom: 15px
+}
+
+.restaurant-products h2{
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0 auto;
+
+    &:after,
+    &:before{
+        display: none;
+    }
+
+
+}
+.after{
+    display: block;
+    width: 300px;
+    height: 30px;
+    // background-color: #fff;
+    background-image: url(../../img/separator.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
+    margin-top: 10px;
+    opacity: 0.2;
+    transform:rotate(180deg)
+}
+
+.restaurant .restaurant-content .restaurant-products .product-list .product{
+    background:transparent;
+    gap:0
+}
+
+.restaurant .restaurant-content .restaurant-products .product-list .product figure img{
+    object-fit:contain
+}
+
+.restaurant .restaurant-content .restaurant-products .product-list .product h4{
+   font-weight: 400;
+   text-transform: uppercase;
+   font-size: 10px;
+   text-align: center;
+   margin-top: 5px;
+   margin-bottom: 0;
+}
+
+.restaurant .restaurant-content .restaurant-products .product-list{
+    gap:0
+}
+
+.restaurant .restaurant-content .restaurant-products .product-list .product{
+    border-right: 1px solid #e3e3e3;
+    border-radius: 0;
+    position: relative;
+    padding-right: 5px;
+    .full-link{
+       position: absolute;
+       inset:0;
+   }
+   &:last-child{
+    border: none;
+}
+}
+.restaurant .restaurant-header .restaurant-infos .location{
+    font-style: italic;
+    opacity: 0.7;
+    margin-left: auto;
+}
+
+
+.restaurant .restaurant-header .restaurant-infos .phone{
+    width: 100%;
+    max-width: 250px
+}
+
+
+.restaurant .restaurant-header .restaurant-infos .phone,
+.restaurant .restaurant-header .restaurant-infos .location{
+    width: 31%;
+}
+
+.restaurant .restaurant-header .restaurant-infos .location{
+    margin-top: 10px;
+}
+.restaurant_note_container{
+    width: 100%;
+    text-align: center;
+}
+.restaurant_note{
+    display: flex;
+    width: 120px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+.restaurant-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:wrap;
+    .logo-mm{
+        width: 70px;
+        display: block;
+        margin-left: auto;
+    }
+    .title-point{
+        &:before,
+        &:after{
+            display: none;
+        }
+    }
+    .admin-links{
+        width: 70px;
+        display: block;
+        margin-right: auto;
+    }
+    h1{
+        width: calc(100% - 140px);
+        text-align: center;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}
+
+p.open{
+    width: 100%;
+    font-size: 9px;
+    color: #fff;
+}
+
+
+
+
+.restaurant-footer{
+   background-image: url('../../img/leather2.jpg');
+}
+.restaurant-footer .footer-container .restaurant-footer-infos p{
+    font-size: 10px;
+}
+
+.footer_separator{
+   width: 300px;
+   height: 30px;
+   background-image: url(../../img/separator.svg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
+   margin: auto;
+   opacity: 1;
+}
+
+.restaurant .restaurant-content .restaurant-opinions .button p{
+    font-weight: 400;
+}
+
+.restaurant .restaurant-content .restaurant-hours{
+    margin-top: 0;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column
+}
+
+.restaurant .restaurant-content .restaurant-hours .hours-container{
+    width: 100%;
+}
+
+.restaurant .restaurant-content .restaurant-hours{
+    .title-point{
+        display: block;
+        margin-top: 0;
+        &:before,
+        &:after{
+            display: none;
+        }
+        .after{
+            display: block;
+            left: 0;
+            right: 0;
+            width: 300px;
+            height: 30px;
+            background-image: url(../../img/separator-w.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: auto;
+            margin-top: 5px;
+            background-color: transparent;
+        }
+    }
+}
+.restaurant .restaurant-content .restaurant-hours .hours-container .hours{
+    width: 90%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.restaurant .restaurant-header .restaurant-infos .phone{
+
+}
+
+.restaurant .restaurant-content .restaurant-hours .hours-container .hours .hour{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .dots{
+        height: 1px;
+        border-bottom: 1px dotted #fff;
+        // width: 100%;
+        width: 100%;
+        position: relative;
+        top: -4px;
+        opacity: 0.7;
+        display: none;
+    }
+
+}
+
+.restaurant .restaurant-content .restaurant-hours .hours-container .hours .hour p:nth-of-type(1){
+    width: 130px;
+    font-size: 12px;
+}
+.restaurant .restaurant-content .restaurant-hours .hours-container .hours .hour span:nth-of-type(2){
+    // width: 70px;
+    // font-size: 12px;
+}
+
+.restaurant .restaurant-content .restaurant-opinions .button::after, .restaurant .restaurant-content .restaurant-opinions .button::before{
+    height: 1px;
+}
+
+html .restaurant-footer .copyright{
+    font-size: 12px;
+    background-color: #000;
+    color: #959595;
+    padding: 12px 0;
+    // border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.restaurant .restaurant-content .restaurant-products .product-list .product p.product_price{
+    margin: 0;
+     font-weight: 400;
+   text-transform: uppercase;
+   font-size: 14px;
+   text-align: center;
+}
+
+.resto_cat_in_cat .resto_cat{
+    opacity: 0.7;
+    transition:all 250ms ease-out;
+    transform:scale(0.8);
+    // order:2;
+    &:hover{
+        opacity: 1;
+        transform:scale(1);
+    }
+}
+
+
+.resto_cat.active {
+    opacity: 1;
+    transform:scale(1);
+     // order:1;
+    .resto_cat_img{border: 1px solid $gold}
+    .resto_cat_title{color: $gold}
+}
+
+.sub_categories{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub_category{
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding: 0 15px;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    margin: 0 7px;
+    border: 1px solid #e3e3e3;
+}
+
+.subCategory_link{
+    text-decoration: none;
+    color: #000;
+}
+
+.sub_categories{
+    width: 100%;
+    overflow: auto;
+    justify-content: start;
+}
+
+
+#wrap{
+        position: relative;
+        // margin-top: 5%;
+        // left: 10%;
+        // width: 80%;
+        // height: 65vh;
+        // display: grid;
+        // grid-template-columns: 1fr 1fr 1fr 1fr;
+        overflow-x: auto;
+        display: flex;
+        justify-content: start;
+        // flex-wrap:wrap;
+    }
+    #wrap ul{
+        position: relative;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        left: 0;
+        transition: 0.3s;
+        list-style: none;
+    }
+    #wrap li{
+        position: relative;
+        background: grey;
+        width: 250px;
+        height: 110px;
+        margin: 0 10px;
+        transition: 0.2s;
+    }
+    #wrap li:hover{
+        opacity: 0.8;
+    }
+
+    #names{
+        position: relative;
+        left: 0;
+        display: flex;
+        margin-bottom: 25px;
+        justify-content: start;
+        width: 100%;
+        overflow: auto;
+        margin-top: 25px;
+    }
+    #names h1{
+        cursor: pointer;
+        margin: 40px  30px 0;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+   .line{
+        position: absolute;
+        width: 60%;
+        height: 3px;
+        background: black;
+
+    }
+   .arrow{
+        position: absolute;
+        left: 26%;
+        margin-top: -20px;
+        border-left: 3px solid black;
+        border-bottom: 3px solid black;
+        transform: rotate(-45deg);
+        width: 30px;
+        height: 30px;
+        background: white;
+        transition: 0.2s ease-in-out;
+    }
+
+    .restaurant-products .products .products-container{
+        padding-top: 0;
+        // opacity: 0.1;
+    }
+
+    .restaurant-products .products .products-container .prod-cont{
+        opacity: 1;
+        padding-top: 0
+    }
+
+@media(min-width: 1000px){
+
+.resto_cats,
+.sub_categories{
+    justify-content: center;
+}
+
+}
+
+#loader {
+   padding: 20px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+}
+
+.loader-icon {
+  /* Styles pour votre icône de chargement */
+  /* Par exemple, vous pouvez utiliser une animation CSS pour faire tourner une icône de chargement */
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid $gold;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#cible{
+transition:all 250ms ease-out;
+}
+
+.category-banner img{
+transition:all 250ms ease-out;
+
+}
+
+
+#cible.part{
+opacity: 0;
+ transform:scale(0.8);
+}
+
+
+#cible.arrive{
+    opacity: 1;
+     transform:scale(1);
+}
+
+.product-details-container{
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    /* max-width: 270px; */
+    background: #000000c9;
+    transition: all 250ms ease-out;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1000;
+}
+
+.product-details-container.open{
+    display: flex;
+    pointer-events:initial;
+    opacity: 1;
+}
+
+.product-details {
+    width: 90%;
+    max-width: 450px;
+    background: #fff;
+    transition: all 250ms ease-out;
+    transform: translateX(-1000%);
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    padding: 20px;
+}
+
+.product-details img {
+    max-width: 100%;
+}
+
+.product-details-container.open .product-details{
+    transform: translateX(0);
+}
+
+.close-details{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+}
+
+.products-details-infos h5{
+    text-align: left;
+    margin-bottom: 5px;
+
+}
+
+p.product-details-content{
+font-size: 14px;
+    line-height: 22px;
+    color: #484848;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.restaurant-products .cat-content{
+    font-size: 14px;
+    line-height: 22px;
+    color: #484848;
+}
+
+.prod-cont h3{
+    text-align: center;
+    margin-top: 25px;
+    &:after{
+        content: '';
+        display: block;
+        position: static;
+        width: 300px;
+        height: 30px;
+        margin-bottom: 10px;
+        // background-color: #fff;
+        background-image: url(../../img/separator.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: auto;
+        opacity: 1;
+    }
+}
+
+p.no-prods{
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+.page-cats h2.title-point.sub-title{
+    margin: 20px auto;
+}
